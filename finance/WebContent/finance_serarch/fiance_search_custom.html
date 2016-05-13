@@ -10,9 +10,14 @@
  <script type="text/javascript">
  
  function allcheck1(){
-	 alert("들어옴");
-	 $("input[name=ForgnSectCd]").eq(0).is(':checked)')
-		var cnt= $("input[name=ForgnSectCd]").length;
+	var cnt= $("input[name=ForgnSectCd]")
+	if( $("input[name=ForgnSectCd]").eq(0).is(':checked)')){
+		$("input[[name=ForgnSectCd]").prop("checked",true);
+		/* $("input:checkbox").prop('checked', $("input[name=ForgnSectCd]").prop("checked")); */
+		/* $("[input[name='ForgnSectCd']").prop("checked",true);
+		$("[input[name='ForgnSectCd']").attr('checked'); */
+	}
+		
 	 
 	 alert(check);
 	 alert(cnt);

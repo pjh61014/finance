@@ -8,41 +8,16 @@
 <link rel="shortcut icon" type="image/ico" href="/images/common/logo.ico" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
  <script type="text/javascript">
- $(document).ready(function(){
-   $("input[name='ForgnSectCdAll']").click(function(){
-     //$("[input[name='ForgnSectCd']").prop('checked', $(this).is(":checked"));
-     $('input[name=ForgnSectCd]').prop('checked', $(this).is(":checked"));
-      $('input:checkbox[name="ForgnSectCd"]').click(function(e){
-        var allCnt = $('input:checkbox.ForgnSectCd').length;
-        alert("if문 들어가기전"+allCnt);
-          if (allCnt >=1) {
-          alert("if문"+allCnt);
-          $('input:checkbox[name="ForgnSectCd"]').prop('checked', $(this).is(":checked"));
-          } else {
-          $('input:checkbox[name="ForgnSectCdAll"]').removeAttr('checked');
-          }
-        });
-      });
-      $("input[name^='FundInvst]").click(function(){
-        //$("[input[name='ForgnSectCd']").prop('checked', $(this).is(":checked"));
-        $('input[name=FundInvstTypeCd]').prop('checked', $(this).is(":checked"));
-         $('input:checkbox[name="FundInvstTypeCd"]').click(function(e){
-           allCnt = $('input:checkbox.FundInvstTypeCd').length;
-           alert("DDif문 들어가기전"+allCnt);
-             if (allCnt >=1) {
-             alert("if문"+allCnt);
-             $('input:checkbox[name="FundInvstTypeCd"]').prop('checked', $(this).is(":checked"));
-              alert("2if문"+allCnt);
-             } else {
-               alert("일로옴?")
-             $('input:checkbox[name="FundInvstTypeCdAll"]').removeAttr('checked');
-             }
-           });
-         });
-          });
-
-
-
+ 
+ function allcheck1(){
+	 alert("들어옴");
+	 $("input[name=ForgnSectCd]").eq(0).is(':checked)')
+		var cnt= $("input[name=ForgnSectCd]").length;
+	 
+	 alert(check);
+	 alert(cnt);
+	// if($("input[name=ForgnSectCd]").eq(0).val())
+ }
 
 </script>
 
@@ -109,7 +84,7 @@
 
                  <td>
                      <ul>
-                         <li><input type="checkbox" name="ForgnSectCdAll" id="fund1All" value="" > <label for="fund1-1">전체</label></li>
+                         <li><input type="checkbox" name="ForgnSectCd" id="fund1All" value="" onclick="allcheck1()" > <label for="fund1-1">전체</label></li>
                          <li><input type="checkbox" name="ForgnSectCd" id="fund1-1" value="1"> <label for="fund1-2">국내</label></li>
                          <li><input type="checkbox" name="ForgnSectCd" id="fund1-2" value="2" > <label for="fund1-3">해외</label></li>
                      </ul>

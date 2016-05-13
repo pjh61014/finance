@@ -8,21 +8,16 @@
 <link rel="shortcut icon" type="image/ico" href="/images/common/logo.ico" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
  <script type="text/javascript">
- 
  function allcheck1(){
-	var cnt= $("input[name=ForgnSectCd]")
-	if( $("input[name=ForgnSectCd]").eq(0).is(':checked)')){
-		$("input[[name=ForgnSectCd]").prop("checked",true);
-		/* $("input:checkbox").prop('checked', $("input[name=ForgnSectCd]").prop("checked")); */
-		/* $("[input[name='ForgnSectCd']").prop("checked",true);
-		$("[input[name='ForgnSectCd']").attr('checked'); */
-	}
 		
-	 
-	 alert(check);
-	 alert(cnt);
-	// if($("input[name=ForgnSectCd]").eq(0).val())
- }
+		 if ($("input[name=ForgnSectCd]").eq(0).is(':checked)')){
+	 		var cnt= $("input[name=ForgnSectCd]").length;
+	 		 alert("들어옴");
+	 	 alert(check);
+	 	 alert(cnt);
+		 }
+	 	// if($("input[name=ForgnSectCd]").eq(0).val())
+	  }
 
 </script>
 

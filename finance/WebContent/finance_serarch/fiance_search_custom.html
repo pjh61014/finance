@@ -8,7 +8,7 @@
 <link rel="shortcut icon" type="image/ico" href="/images/common/logo.ico" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 <script type="text/javascript">
-
+	var xhr;
 	$(document).ready(function(){ 
 	    $("#fund1All").change(function(){
 	      $(".chk1").prop('checked', $(this).prop("checked"));
@@ -36,53 +36,70 @@
 	});
 	function checkSelectedValue(){
 		alert("들어옴");
-		var chk1Val = [];
-		var chk2Val = [];
-		var chk3Val = [];
-		var chk4Val = [];
-		var chk5Val = [];
-		var chk6Val = [];
-		var chk7Val = [];
+		var classify = [];
+		var type = [];
+		var profit = [];
+		var scale = [];
+		var Yield = [];
+		var charge = [];
+		var std = [];
 		
     	$("input[name=ForgnSectCd]:checked").each(function(){
-    		chk1Val.push($(this).val());
+    		classify.push($(this).val());
     		//alert(chk1Val);
     	});
     	$("input[name=FundInvstTypeCd]:checked").each(function(){
-    		chk2Val.push($(this).val());
+    		type.push($(this).val());
     		//alert(chk2Val);
     	}); 
     	$("input[name=SetPeriodMM]:checked").each(function(){
-    		chk3Val.push($(this).val());
+    		profit.push($(this).val());
     		//alert(chk3Val);
     	}); 
     	$("input[name=kfrEstabAmUk]:checked").each(function(){
-    		chk4Val.push($(this).val());
+    		scale.push($(this).val());
     		//alert(chk4Val);
     	}); 
     	$("input[name=Yield]:checked").each(function(){
-    		chk5Val.push($(this).val());
+    		Yield.push($(this).val());
     		//alert(chk5Val);
     	}); 
     	$("input[name=StdGrade]:checked").each(function(){
-    		chk6Val.push($(this).val());
+    		charge.push($(this).val());
     		//alert(chk6Val);
     	}); 
     	$("input[name=TotRwrt]:checked").each(function(){
-    		chk7Val.push($(this).val());
+    		std.push($(this).val());
     		//alert(chk6Val);
     	}); 
-    	alert("chk1val1 :"+chk1Val);
-    	alert("chk1val2 :"+chk2Val);
-    	alert("chk1val3 :"+chk3Val);
-    	alert("chk1val4 :"+chk4Val);
-    	alert("chk1val5 :"+chk5Val);
-    	alert("chk1val6 :"+chk6Val);
-    	alert("chk1val7 :"+chk7Val);
+    	alert("classify :"+classify);
+    	alert("type :"+type);
+    	alert("profit :"+profit);
+    	alert("scale :"+scale);
+    	alert("Yield :"+Yield);
+    	alert("charge :"+charge);
+    	alert("std :"+std);
+    	runAjax(classify,type,profit,scale,Yield,charge,std)
    	}
- 
-
-</script>
+	
+	function runAjax(classify,type,profit,scale,Yield,charge,std){
+		xhr=new XMLHttpRequest();
+		xhr.onreadystatechange=finfinanceSearchs;
+		xhr.open("GET", "/finance/financeSearch.do?classify="+classify+"&type="+type
+				+"&profit="+profit+"&scale="+scale+"&Yield="+Yield+"&charge="+charge
+				+"&std="+std,true);
+		xhr.send();
+	}
+ 	function finfinanceSearchs(){
+ 		alert("들어옴");
+ 		var text;
+ 		if(xhr.readyState==4 && xhr.status==200) {
+ 		document.getElementById("bodyList").innerHTML
+		=text;
+ 		}
+ 		
+ 	}
+	</script>
 
 
 </head>
@@ -146,8 +163,8 @@
  				 <td>
                      <ul id ="ForgnSect">
                          <li><input type="checkbox" class="chk1all" name="ForgnSectCdall" id="fund1All" value="1" >전체</li>
-                         <li><input type="checkbox" class="chk1" name="ForgnSectCd" id="fund1-1" value="1"> 국내</li>
-                         <li><input type="checkbox" class="chk1" name="ForgnSectCd" id="fund1-2" value="2" >해외</li>
+                         <li><input type="checkbox" class="chk1" name="ForgnSectCd" id="fund1-1" value="국내"> 국내</li>
+                         <li><input type="checkbox" class="chk1" name="ForgnSectCd" id="fund1-2" value="해외" >해외</li>
                      </ul>
                  </td>
 

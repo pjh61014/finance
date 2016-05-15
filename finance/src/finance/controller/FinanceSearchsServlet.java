@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
  * Servlet implementation class FinanceSerach
  */
 @WebServlet(name = "financeSearchs", urlPatterns = { "/financeSearchs.do" })
-public class FinanceSearch extends HttpServlet {
+public class FinanceSearchsServlet extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("euc-kr");

@@ -1,3 +1,4 @@
+package finance.controller;
 
 
 import java.io.IOException;
@@ -11,8 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class FinanceSerach
  */
-@WebServlet(name = "financeSearch", urlPatterns = { "/financeSearch.do" })
-public class FinanceSerach extends HttpServlet {
+@WebServlet(name = "financeSearchs", urlPatterns = { "/financeSearchs.do" })
+public class FinanceSearch extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("euc-kr");

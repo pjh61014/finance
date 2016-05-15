@@ -85,7 +85,7 @@
 	function runAjax(classify,type,date,scale,profit,charge,std){
 		xhr=new XMLHttpRequest();
 		xhr.onreadystatechange=finfinanceSearchs;
-		xhr.open("GET", "/finance/financeSearch.do?classify="+classify+"&type="+type
+		xhr.open("GET", "/finance/financeSearchs.do?classify="+classify+"&type="+type
 				+"&date="+date+"&scale="+scale+"&profit="+profit+"&charge="+charge
 				+"&std="+std,true);
 		xhr.send();

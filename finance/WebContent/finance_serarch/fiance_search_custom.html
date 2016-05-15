@@ -38,9 +38,9 @@
 		alert("들어옴");
 		var classify = [];
 		var type = [];
-		var profit = [];
+		var date = [];
 		var scale = [];
-		var Yield = [];
+		var profit = [];
 		var charge = [];
 		var std = [];
 		
@@ -53,7 +53,7 @@
     		//alert(chk2Val);
     	}); 
     	$("input[name=SetPeriodMM]:checked").each(function(){
-    		profit.push($(this).val());
+    		date.push($(this).val());
     		//alert(chk3Val);
     	}); 
     	$("input[name=kfrEstabAmUk]:checked").each(function(){
@@ -61,7 +61,7 @@
     		//alert(chk4Val);
     	}); 
     	$("input[name=Yield]:checked").each(function(){
-    		Yield.push($(this).val());
+    		profit.push($(this).val());
     		//alert(chk5Val);
     	}); 
     	$("input[name=StdGrade]:checked").each(function(){
@@ -74,19 +74,19 @@
     	}); 
     	alert("classify :"+classify);
     	alert("type :"+type);
-    	alert("profit :"+profit);
+    	alert("date :"+date);
     	alert("scale :"+scale);
-    	alert("Yield :"+Yield);
+    	alert("profit :"+profit);
     	alert("charge :"+charge);
     	alert("std :"+std);
-    	runAjax(classify,type,profit,scale,Yield,charge,std)
+    	runAjax(classify,type,date,scale,profit,charge,std)
    	}
 	
-	function runAjax(classify,type,profit,scale,Yield,charge,std){
+	function runAjax(classify,type,date,scale,profit,charge,std){
 		xhr=new XMLHttpRequest();
 		xhr.onreadystatechange=finfinanceSearchs;
 		xhr.open("GET", "/finance/financeSearch.do?classify="+classify+"&type="+type
-				+"&profit="+profit+"&scale="+scale+"&Yield="+Yield+"&charge="+charge
+				+"&date="+date+"&scale="+scale+"&profit="+profit+"&charge="+charge
 				+"&std="+std,true);
 		xhr.send();
 	}

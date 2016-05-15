@@ -15,20 +15,22 @@ import javax.servlet.http.HttpServletResponse;
 public class FinanceSerach extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("euc-kr");
 		String classify = request.getParameter("classify");
-		String type = request.getParameter("");
-		String profit = request.getParameter("profit");
+		String type = request.getParameter("type");
+		String profit = request.getParameter("date");
 		String scale = request.getParameter("scale");
-		String Yield = request.getParameter("Yield");
+		String Yield = request.getParameter("profit");
 		String charge = request.getParameter("charge");
 		String std = request.getParameter("std");
+		//response.setContentType("html/);
 		
 		System.out.println("지금들어오긴했냐");
 		System.out.println("classify : "+classify);
 		System.out.println("type : "+type);
-		System.out.println("profit : "+profit);
+		System.out.println("date : "+profit);
 		System.out.println("scale : "+scale);
-		System.out.println("Yield : "+Yield);
+		System.out.println("profit : "+Yield);
 		System.out.println("charge : "+charge);
 		System.out.println("std : "+std);
 		
